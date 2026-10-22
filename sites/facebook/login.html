@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook — Security Awareness Demo</title>
+    <meta name="description" content="Security awareness demonstration — not affiliated with Facebook or Meta">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/shared.css">
+    <style>
+        body { background: #f0f2f5; color: #1c1e21; }
+
+        .hero-section { display: flex; align-items: center; justify-content: center; gap: 80px; max-width: 980px; width: 100%; padding: 40px 20px; }
+
+        /* Left - branding */
+        .brand-side { max-width: 400px; }
+        .fb-logo { margin-bottom: 12px; }
+        .fb-logo svg { height: 52px; }
+        .brand-tagline { font-size: 24px; font-weight: 400; line-height: 1.3; color: #1c1e21; }
+
+        /* Right - form card */
+        .login-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.1); padding: 24px; width: 400px; max-width: 100%; }
+
+        .form-input { border: 1px solid #dddfe2; border-radius: 8px; height: 52px; font-size: 16px; color: #1d2129; background: #fff; }
+        .form-input:focus { border-color: #1877f2; box-shadow: 0 0 0 2px rgba(24,119,242,.2); }
+        .form-input::placeholder { color: #8a8d91; }
+
+        .btn-login { background: #1877f2; color: #fff; border-radius: 8px; height: 52px; font-size: 18px; font-weight: 700; }
+        .btn-login:hover { background: #166fe5; }
+        .btn-login:disabled { background: #e4e6eb; color: #bcc0c4; }
+
+        .forgot-link { display: block; text-align: center; margin-top: 18px; font-size: 14px; color: #1877f2; text-decoration: none; font-weight: 500; }
+        .forgot-link:hover { text-decoration: underline; }
+
+        .divider { margin: 20px 0; }
+        .divider::before, .divider::after { background: #dadde1; }
+
+        .btn-new { background: #42b72a; color: #fff; border-radius: 8px; height: 48px; font-size: 16px; font-weight: 700; width: auto; padding: 0 32px; margin: 0 auto; display: flex; }
+        .btn-new:hover { background: #36a420; }
+
+        .card-footer { text-align: center; margin-top: 24px; font-size: 14px; color: #1c1e21; }
+        .card-footer a { color: #1877f2; text-decoration: none; font-weight: 700; }
+
+        .password-toggle { color: #606770; }
+
+        /* Footer */
+        .site-footer { background: #fff; border-top: 1px solid #e4e6eb; margin-top: auto; }
+        .footer-links a { color: #8a8d91; }
+        .footer-copy { color: #8a8d91; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-section { flex-direction: column; gap: 24px; text-align: center; }
+            .brand-side { max-width: 100%; }
+            .login-card { width: 100%; max-width: 400px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <div class="demo-banner">
+        <span class="demo-banner__icon">🔬</span>
+        <span class="demo-banner__text">Security Awareness Demo — NOT affiliated with Facebook or Meta. No real data is collected.</span>
+    </div>
+
+    <main class="page-main">
+        <div class="hero-section">
+            <div class="brand-side">
+                <div class="fb-logo">
+                    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="35" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#1877f2">facebook</text>
+                    </svg>
+                </div>
+                <p class="brand-tagline">Connect with friends and the world around you on this security awareness demonstration.</p>
+            </div>
+
+            <div class="login-card">
+                <form data-demo-form data-brand="facebook" id="loginForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="username" placeholder="Email address or phone number" autocomplete="username" required aria-label="Email or phone">
+                    </div>
+                    <div class="form-group password-wrapper">
+                        <input type="password" class="form-input" name="password" placeholder="Password" autocomplete="current-password" required aria-label="Password">
+                        <button type="button" class="password-toggle" aria-label="Show password">Show</button>
+                    </div>
+                    <button type="submit" class="btn btn-login btn-submit" disabled>Log in</button>
+
+                    <div class="notification notification--success">
+                        <span>✅</span>
+                        <span>Demo simulation complete — no real authentication was performed.</span>
+                    </div>
+                </form>
+
+                <a class="forgot-link" href="#" onclick="return false;">Forgotten password?</a>
+
+                <div class="divider"></div>
+
+                <div style="text-align:center">
+                    <button class="btn btn-new" type="button" onclick="alert('Demo: Account creation simulation')">Create new account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links"><a href="#">English (UK)</a><a href="#">About</a><a href="#">Developers</a><a href="#">Careers</a><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Terms</a><a href="#">Help</a></nav>
+        <p class="footer-copy">Security Awareness Demo — Not affiliated with Facebook</p>
+    </footer>
+</div>
+<script src="../shared/shared.js"></script>
+</body>
+</html>

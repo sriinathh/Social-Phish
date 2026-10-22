@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google — Security Awareness Demo</title>
+    <meta name="description" content="Security awareness demonstration — not affiliated with Google">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/shared.css">
+    <style>
+        body { background: #fff; color: #202124; font-family: 'Roboto', var(--font-sans); }
+
+        .google-card { background: #fff; border: 1px solid #dadce0; border-radius: 12px; max-width: 450px; width: 100%; padding: 48px 40px 36px; }
+
+        .g-logo { display: flex; justify-content: center; margin-bottom: 16px; }
+        .g-logo svg { height: 28px; }
+
+        .card-title { font-family: 'Google Sans', 'Roboto', sans-serif; font-size: 24px; font-weight: 400; color: #202124; text-align: center; margin-bottom: 4px; }
+        .card-subtitle { font-size: 16px; color: #202124; text-align: center; margin-bottom: 28px; }
+
+        .form-input { border: 1px solid #dadce0; border-radius: 6px; height: 56px; font-size: 16px; color: #202124; padding: 0 16px; }
+        .form-input:focus { border-color: #1a73e8; border-width: 2px; box-shadow: none; padding: 0 15px; }
+        .form-input::placeholder { color: #80868b; }
+
+        .form-label { font-size: 12px; color: #5f6368; font-weight: 400; margin-bottom: 6px; }
+        .form-group { margin-bottom: 20px; }
+
+        .forgot-link { font-size: 14px; color: #1a73e8; text-decoration: none; font-weight: 500; display: inline-block; margin-bottom: 8px; }
+        .forgot-link:hover { text-decoration: underline; }
+
+        .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+        .create-link { font-size: 14px; color: #1a73e8; text-decoration: none; font-weight: 500; }
+        .create-link:hover { text-decoration: underline; background: rgba(26,115,232,.04); border-radius: 4px; }
+
+        .btn-next { background: #1a73e8; color: #fff; border-radius: 6px; height: 40px; font-size: 14px; font-weight: 500; width: auto; min-width: 90px; padding: 0 24px; }
+        .btn-next:hover { background: #1765cc; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+        .btn-next:disabled { background: #e8eaed; color: #80868b; }
+
+        .password-toggle { color: #5f6368; font-size: 13px; }
+
+        .helper-text { font-size: 12px; color: #5f6368; margin-top: 12px; line-height: 1.5; }
+        .helper-text a { color: #1a73e8; text-decoration: none; }
+
+        /* Footer */
+        .site-footer { border-top: 1px solid #e8eaed; background: #f8f9fa; }
+        .footer-links { gap: 4px 24px; }
+        .footer-links a { color: #5f6368; font-size: 12px; }
+        .footer-copy { color: #5f6368; }
+
+        .notification { border-radius: 8px; margin-top: 20px; }
+
+        @media (max-width: 480px) {
+            .google-card { border: none; border-radius: 0; padding: 32px 20px; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <div class="demo-banner">
+        <span class="demo-banner__icon">🔬</span>
+        <span class="demo-banner__text">Security Awareness Demo — NOT affiliated with Google. No real data is collected.</span>
+    </div>
+
+    <main class="page-main">
+        <div class="google-card">
+            <div class="g-logo">
+                <svg viewBox="0 0 75 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 9.6C0 4.3 4.1.2 9.2.2c2.8 0 4.8 1.1 6.3 2.5l-1.8 1.8c-1.1-1-2.5-1.8-4.5-1.8C5.7 2.7 2.6 6 2.6 9.6c0 3.6 3.1 6.9 6.6 6.9 2.4 0 3.8-1 4.7-1.9.7-.7 1.2-1.8 1.4-3.2H9.2V9h8.4c.1.5.1 1 .1 1.6 0 1.9-.5 4.3-2.2 6-1.6 1.7-3.7 2.6-6.3 2.6C4.1 19.2 0 15 0 9.6z" fill="#4285F4"/>
+                    <path d="M25.3 6.4c-3.4 0-6.2 2.6-6.2 6.2 0 3.5 2.8 6.2 6.2 6.2 3.4 0 6.2-2.7 6.2-6.2 0-3.6-2.8-6.2-6.2-6.2zm0 9.9c-1.9 0-3.5-1.5-3.5-3.7 0-2.2 1.6-3.7 3.5-3.7s3.5 1.5 3.5 3.7c0 2.2-1.6 3.7-3.5 3.7z" fill="#EA4335"/>
+                    <path d="M40.6 6.4c-3.4 0-6.2 2.6-6.2 6.2 0 3.5 2.8 6.2 6.2 6.2 3.4 0 6.2-2.7 6.2-6.2 0-3.6-2.8-6.2-6.2-6.2zm0 9.9c-1.9 0-3.5-1.5-3.5-3.7 0-2.2 1.6-3.7 3.5-3.7s3.5 1.5 3.5 3.7c0 2.2-1.6 3.7-3.5 3.7z" fill="#FBBC05"/>
+                    <path d="M55.2 6.4c-3.2 0-5.9 2.7-5.9 6.2 0 3.7 2.9 6.2 5.8 6.2 1.7 0 2.7-.7 3.4-1.5v1.2c0 2.1-1.3 3.3-3.2 3.3-1.6 0-2.6-1.2-3-2.2l-2.3 1c.7 1.5 2.5 3.6 5.3 3.6 3.1 0 5.6-1.9 5.6-6.1V6.8h-2.4v1.1c-.8-.9-1.9-1.5-3.3-1.5zm.2 9.9c-1.8 0-3.3-1.5-3.3-3.7 0-2.2 1.5-3.7 3.3-3.7 1.8 0 3.2 1.6 3.2 3.7 0 2.2-1.4 3.7-3.2 3.7z" fill="#4285F4"/>
+                    <path d="M67.6.8v17.8h-2.6V.8h2.6z" fill="#34A853"/>
+                    <path d="M75 12.5c0-3.5-2.7-6.1-5.9-6.1-3.3 0-6 2.7-6 6.2s2.7 6.2 6.3 6.2c2 0 3.3-.8 4.3-1.9l-1.8-1.3c-.6.7-1.5 1.2-2.6 1.2-1.5 0-2.2-.7-2.8-1.7l7.5-3.1-.2-.5h.2zm-7.6 1.2c-.1-2.4 1.8-3.6 3.2-3.6 1.1 0 2 .5 2.3 1.3l-5.5 2.3z" fill="#EA4335"/>
+                </svg>
+            </div>
+
+            <h1 class="card-title">Sign in</h1>
+            <p class="card-subtitle">to continue to Demo Services</p>
+
+            <form data-demo-form data-brand="google" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email or phone</label>
+                    <input type="text" class="form-input" name="username" id="email" autocomplete="username" required aria-label="Email or phone">
+                </div>
+                <div class="form-group password-wrapper">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" class="form-input" name="password" id="password" autocomplete="current-password" required aria-label="Password">
+                    <button type="button" class="password-toggle" aria-label="Show password">Show</button>
+                </div>
+
+                <a class="forgot-link" href="#" onclick="return false;">Forgot password?</a>
+
+                <div class="notification notification--success">
+                    <span>✅</span>
+                    <span>Demo simulation complete — no real authentication was performed.</span>
+                </div>
+
+                <p class="helper-text">Not your computer? Use a private browsing window to sign in. <a href="#" onclick="return false;">Learn more about using Guest mode</a></p>
+
+                <div class="btn-row">
+                    <a class="create-link" href="#" onclick="alert('Demo: Account creation'); return false;">Create account</a>
+                    <button type="submit" class="btn btn-next btn-submit" disabled>Next</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links"><a href="#">Help</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+        <p class="footer-copy">Security Awareness Demo — Not affiliated with Google</p>
+    </footer>
+</div>
+<script src="../shared/shared.js"></script>
+</body>
+</html>
